@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图像分类</title>
+  <style>
+    .btn {
+      width: 80px;
+      height: 80px;
+      margin: 100px auto;
+      border-radius: 50%;
+      line-height: 80px;
+      font-size: 14px;
+      text-align: center;
+      color: #fff;
+      background-color: yellowgreen;
+      box-shadow: 0 0 3px 0px rgba(0,0,0,0.3);
+    }
+    .result {
+      text-align: center;
+      color: red;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="take-picture" accept="image/*" style="display:none">
+  <div class="btn" id="btn">点击拍摄图像</div>
+  <div id="result"></div>
+  <script src="./src/index.ts"></script>
+</body>
+</html>
