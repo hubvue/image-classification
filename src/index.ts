@@ -1,6 +1,5 @@
-import { FromPixels } from "@tensorflow/tfjs"
-import { imgToTensor, loadModel, predict } from "./predict"
 import {IMAGENET_CLASSES} from './classes'
+import { imgToTensor, loadModel, predict } from "./predict"
 const createInputElement = ():Promise<File> => {
   return new Promise((resolve) => {
     const input = document.createElement('input')
@@ -40,14 +39,14 @@ const getImageEle = async () => {
   const imgEle = await base64ToImg(imageBase64)
   return imgEle
 }
-function run() {
+async function run() {
   const btn = document.querySelector('#btn')
+  const resultEle = document.querySelector('#result')
+  await loadModel()
   btn.addEventListener('click', async (e) => {
-      await loadModel()
       const imgElem = await getImageEle()
       const features = imgToTensor(imgElem)
       const result = predict(features)
-      const resultEle = document.querySelector('#result')
       resultEle.innerHTML = IMAGENET_CLASSES[result]
   })
 }

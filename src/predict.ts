@@ -1,5 +1,5 @@
 import { browser, LayersModel, loadLayersModel, Tensor, tidy } from '@tensorflow/tfjs'
-const MOBILE_NET_PATH = 'http://172.25.144.104:8080/model/model.json'
+const MOBILE_NET_PATH = 'http://127.0.0.1:8080/model/model.json'
 let model: LayersModel
 
 export const loadModel = async() => {
